@@ -1,1 +1,88 @@
-<h1>Students are great learning</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Magic 8-Ball Fortune Teller</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f1f1f1;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #magic-ball {
+      font-size: 24px;
+      padding: 20px;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      background-color: #009688;
+      color: white;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    #magic-ball:hover {
+      transform: scale(1.1);
+    }
+
+    #answer {
+      font-size: 18px;
+      margin-top: 30px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Magic 8-Ball Fortune Teller</h1>
+  <div id="magic-ball">Ask<br>Me<br>Anything</div>
+  <p id="answer"></p>
+
+  <script>
+    // Array of possible answers
+    const answers = [
+      "It is certain.",
+      "It is decidedly so.",
+      "Without a doubt.",
+      "Yes, definitely.",
+      "You may rely on it.",
+      "As I see it, yes.",
+      "Most likely.",
+      "Outlook good.",
+      "Yes.",
+      "Signs point to yes.",
+      "Reply hazy, try again.",
+      "Ask again later.",
+      "Better not tell you now.",
+      "Cannot predict now.",
+      "Concentrate and ask again.",
+      "Don't count on it.",
+      "My reply is no.",
+      "My sources say no.",
+      "Outlook not so good.",
+      "Very doubtful."
+    ];
+
+    const magicBall = document.getElementById("magic-ball");
+    const answerDisplay = document.getElementById("answer");
+
+    magicBall.addEventListener("click", function () {
+      // Randomly select an answer from the array
+      const randomIndex = Math.floor(Math.random() * answers.length);
+      const randomAnswer = answers[randomIndex];
+
+      // Display the answer
+      answerDisplay.textContent = randomAnswer;
+    });
+  </script>
+</body>
+
+</html>
+
